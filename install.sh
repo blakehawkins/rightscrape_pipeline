@@ -3,8 +3,8 @@
 set -euxo pipefail
 
 sudo mkdir -p /opt/rightscrape_pipeline/
-cp input.tsv /opt/rightscrape_pipeline/
-cp run.sh /opt/rightscrape_pipeline/
+sudo cp input.tsv /opt/rightscrape_pipeline/
+sudo cp run.sh /opt/rightscrape_pipeline/
 
 echo '
 ---
@@ -13,11 +13,20 @@ password: "<password>"
 room: "#roomname:matrix.org"
 account: "cooluser"
 html_json_key: "html"
-' > /opt/rightscrape_pipeline/config.yaml
+' > /tmp/config.yaml
+
+sudo cp /tmp/config.yaml /opt/rightscrape_pipeline/
 
 sudo apt-get install jq
-cargo install xsv
-cargo install rightscrape
-cargo install filterfrom
-cargo install rightscrapex
-pushd ~/ && git clone git@github.com:blakehawkins/send_glitch.git && pushd send_glitch && cargo install && popd && popd
+which xsv || cargo install xsv
+which rightscrape || cargo install rightscrape
+which filterfrom || cargo install filterfrom
+which rightscrapex || cargo install rightscrapex
+which send_glitch || (
+  pushd ~/ && \
+    git clone git@github.com:blakehawkins/send_glitch.git && \
+    pushd send_glitch && \
+    cargo install && \
+    popd && \
+    popd
+)
