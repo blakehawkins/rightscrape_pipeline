@@ -18,15 +18,8 @@ html_json_key: "html"
 sudo cp /tmp/config.yaml /opt/rightscrape_pipeline/
 
 sudo apt-get install jq
-which xsv || cargo install xsv
-which rightscrape || cargo install rightscrape
-which filterfrom || cargo install filterfrom
+which xsv          || cargo install xsv
+which rightscrape  || cargo install rightscrape
+which filterfrom   || cargo install filterfrom
 which rightscrapex || cargo install rightscrapex
-which send_glitch || (
-  pushd ~/ && \
-    git clone git@github.com:blakehawkins/send_glitch.git && \
-    pushd send_glitch && \
-    cargo install && \
-    popd && \
-    popd
-)
+which send_glitch  || cargo install send_glitch
