@@ -26,8 +26,8 @@ which filterfrom   || cargo install filterfrom
 which rightscrapex || cargo install rightscrapex
 which send_glitch  || cargo install send_glitch
 
-sudo cp ~/.cargo/bin/filterfrom /usr/bin/
-sudo cp ~/.cargo/bin/rightscrape /usr/bin/
+sudo cp ~/.cargo/bin/filterfrom   /usr/bin/
+sudo cp ~/.cargo/bin/rightscrape  /usr/bin/
 sudo cp ~/.cargo/bin/rightscrapex /usr/bin/
-sudo cp ~/.cargo/bin/send_glitch /usr/bin/
-sudo cp ~/.cargo/bin/xsv /usr/bin/
+sudo cp ~/.cargo/bin/send_glitch  /usr/bin/
+sudo cp ~/.cargo/bin/xsv          /usr/bin/
